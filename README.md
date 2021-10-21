@@ -161,4 +161,6 @@ RCT_EXTERN_METHOD(sendMessageToNative: (NSString)rnMessage)
 ```
 
 ### RN
+Importer ```js
+NativeModules```
 Au dessus de votre classe ```App Name```, ajouter le code suiant:
