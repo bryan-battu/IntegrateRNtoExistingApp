@@ -127,6 +127,8 @@ Dans Xcode, ouvrir ``Info.plist``
 
 ## Créer un module natif pour vérifier la capacité de communiquer en RN et code natif
 
+Nous allons créer un TextField ainsi qu'un boutton qui envoie au natif le text écrit dans le TextField.
+
 ### iOS
 Un module natif iOS a besoin de 2 fichiers:
 * Un fichier ``.swift``qui contient les fonctions:
@@ -157,3 +159,6 @@ RCT_EXTERN_METHOD(sendMessageToNative: (NSString)rnMessage)
 
 @end
 ```
+
+### RN
+Au dessus de votre classe ```App Name```, ajouter le code suiant:
