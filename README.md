@@ -88,9 +88,10 @@ class AppName extends React.Component {
 
 module.exports = AddRatingApp;
 ```
+Ce code va créer une vue simple affichant un écran vert et du texte
 
 ### iOS
-Créer un boutton dans le ``storyboard``.
+Dans le projet Xcode, créer un boutton dans le ``storyboard``.
 Lier ce boutton avec le ``ViewController``
 
 ```swift 
@@ -114,7 +115,7 @@ class ViewController: UIViewController {
     
 }
 ```
-Nous verrons ensuite à quoi correspond le ``"AppName"``
+``"AppName"`` correspond au nom du module RN qui va s'afficher.
 
 Apple a bloqué le chargement implicite de ressources HTTP en clair. Nous devons donc ajouter ``NSAppTransportSecurity`` dans le ``Info.plist``
 
