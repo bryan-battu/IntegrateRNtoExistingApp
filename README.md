@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func BtnGoReactView(_ sender: Any) {
-        let rootView = RNViewManager.sharedInstance.viewForModule("App", initialProperties: nil)
+        let rootView = RNViewManager.sharedInstance.viewForModule("AppName", initialProperties: nil)
         let reactNativeVC = UIViewController()
         reactNativeVC.view = rootView
         reactNativeVC.modalPresentationStyle = .fullScreen
@@ -75,4 +75,13 @@ class ViewController: UIViewController {
     
 }
 ```
-Nous verrons ensuite à quoi correspond le ``"App"``
+Nous verrons ensuite à quoi correspond le ``"AppName"``
+
+Apple a bloqué le chargement implicite de ressources HTTP en clair. Nous devons donc ajouter ``NSAppTransportSecurity`` dans le ``Info.plist``
+
+Dans Xcode, ouvrir ``Info.plist``
+* Ajouter ``NSAppTransportSecurity`` en tant que Dictionnary.
+* Ajouter ``NSExceptionDomains`` en tant que Dictionnary en dessous de ``NSAppTransportSecurity``.
+* Ajouter une clé nommée ``localhost`` de type Dictionnary en dessous de ``NSExceptionDomains``.
+* Ajouter ``NSTemporaryExceptionAllowsInsecureHTTPLoads`` avec la valeur ``YES`` en dessous de ``localhost``.
+
