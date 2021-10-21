@@ -285,5 +285,6 @@ export NODE_BINARY=node
 RN % react-native bundle --platform ios --dev false --entry-file index.js --bundle-output main.jsbundle --assets-dest {Chemin de destination}
 ```
 Cette commande va créer un fichier ```main.jsbundle```
-* Coller ce fichier dans votre projet Xcode
+* Coller ce fichier dans votre projet Xcode:
+
 ![image](https://user-images.githubusercontent.com/57012683/138277915-2363ec78-2fe7-4dfd-b1c6-6bff794d59ea.png)
