@@ -47,3 +47,31 @@ end
 ```
 
 Après avoir créer le **Podfile**, installer les pod RN avec ``pod install``
+
+## Naviguer du code natif au RN
+
+### iOS
+Créer un boutton dans le ``storyboard``.
+Lier ce boutton avec le ``ViewController``
+
+```swift 
+import UIKit
+import React
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+    @IBAction func BtnGoReactView(_ sender: Any) {
+        let rootView = RNiOSViewManager.sharedInstance.viewForModule("AddRatingApp", initialProperties: nil)
+        let reactNativeVC = UIViewController()
+        reactNativeVC.view = rootView
+        reactNativeVC.modalPresentationStyle = .fullScreen
+        present(reactNativeVC, animated: true)
+    }
+    
+}
+```
