@@ -227,7 +227,7 @@ extension RNiOSViewManager: RCTBridgeDelegate {
 Dans le Terminal, se placer dans le dossier RN et taper la commande ```npm start```
 Vous devriez voir quelque chose comme: 
 ```shell 
-> RN@0.0.1 start /Users/bryanbattu/Desktop/RN
+> RN@0.0.1 start /Users/.../.../RN
 > react-native start
 
                                                       
@@ -259,4 +259,9 @@ Vous devriez voir quelque chose comme:
 
 To reload the app press "r"
 To open developer menu press "d"
+```
+Lancer ensuite votre application depuis Xcode. 
+Essayez d'entrer du texte dans le TextField puis cliquer sur le boutton.
+Le message ```shell
+This log is from swift: Ffff
 ```
