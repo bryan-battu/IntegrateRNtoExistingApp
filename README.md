@@ -276,7 +276,14 @@ Nous allons faire en sorte que ce ne soit plus le cas.
 Pour cela, il y'a plusieures étapes:
 * Dans le *Project Navigator*, cliquer sur le projet > Build Phases > cliquer sur + et sélectionner `New Run Script Phase`
 * Ajouter le script suivant:
-```objective-c
+```swift
 export NODE_BINARY=node
 ../node_modules/react-native/scripts/react-native-xcode.sh
 ```
+* Aller au dossier RN dans le terminal et taper la commande:
+```shell
+RN % react-native bundle --platform ios --dev false --entry-file index.js --bundle-output main.jsbundle --assets-dest {Chemin de destination}
+```
+Cette commande va créer un fichier ```main.jsbundle```
+* Coller ce fichier dans votre projet Xcode
+![image](https://user-images.githubusercontent.com/57012683/138277915-2363ec78-2fe7-4dfd-b1c6-6bff794d59ea.png)
