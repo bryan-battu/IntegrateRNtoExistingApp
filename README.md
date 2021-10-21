@@ -125,6 +125,8 @@ Dans Xcode, ouvrir ``Info.plist``
 * Ajouter une clé nommée ``localhost`` de type Dictionnary en dessous de ``NSExceptionDomains``.
 * Ajouter ``NSTemporaryExceptionAllowsInsecureHTTPLoads`` avec la valeur ``YES`` en dessous de ``localhost``.
 
+![Capture d’écran 2021-10-21 à 14 37 28](https://user-images.githubusercontent.com/57012683/138278649-951f746e-ada2-45d0-9508-a2df9699067f.png)
+
 ## Créer un module natif pour vérifier la capacité de communiquer en RN et code natif
 
 Nous allons créer un TextField ainsi qu'un boutton qui envoie au natif le text écrit dans le TextField.
