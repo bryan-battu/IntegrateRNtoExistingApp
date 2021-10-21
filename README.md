@@ -175,12 +175,12 @@ const TestConnectNative = {
 Dans le ```render``` en dessous du texte, ajouter le code suivant:
 ```js
 <TextInput
-                    placeholder={'Typing some messages to native...'}
-                    onChangeText={newText => this.setState({messageToNative: newText})}
-                />
-                <Button
-                    title="Send message to native"
-                    color="#841584"
-                    onPress={() => {TestConnectNative.sendMessage(this.state.messageToNative)}}
-                />
+    placeholder={'Typing some messages to native...'}
+    onChangeText={newText => this.setState({messageToNative: newText})}
+/>
+<Button
+   title="Send message to native"
+   color="#841584"
+   onPress={() => {TestConnectNative.sendMessage(this.state.messageToNative)}}
+/>
 ```
