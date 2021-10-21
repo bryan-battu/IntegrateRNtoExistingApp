@@ -147,3 +147,13 @@ class TestConnectNativeModule: NSObject {
     }
 }
 ```
+* un fichier ```.m``` pour exposer nos méthodes au RN:
+```objective-c
+#import <React/RCTBridgeModule.h>
+
+@interface RCT_EXTERN_REMAP_MODULE(TestConnectNative, TestConnectNativeModule, NSObject)
+
+RCT_EXTERN_METHOD(sendMessageToNative: (NSString)rnMessage)
+
+@end
+```
