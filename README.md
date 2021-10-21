@@ -19,7 +19,7 @@ Supprimer tous les fichiers présents dans les sous-dossiers``/ios`` et ``/andro
 ### iOS
 Créer un projet iOS depuis Xcode. Coller l'ensemble des fichiers du projet dans le sous-dossier ``/ios``
 Dans ``/ios``, créer un fichier pod avec ``pod init`` et le modifier avec le **Podfile** suivant:
-```podfile
+```ruby
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
