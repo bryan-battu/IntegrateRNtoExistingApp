@@ -50,6 +50,45 @@ Après avoir créer le **Podfile**, installer les pod RN avec ``pod install``
 
 ## Naviguer du code natif au RN
 
+### RN
+Créer un fichier ``RNView.js`` à la base du projet.
+Ajouter le code suivant 
+```react natif
+'use strict';
+
+import React from 'react';
+import ReactNative, {
+    StyleSheet,
+    Text,
+    View,
+} from 'react-native';
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'green',
+    },
+    welcome: {
+        fontSize: 20,
+        color: 'white',
+    },
+});
+
+class AppName extends React.Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>We're live from React Native!!!</Text>
+            </View>
+        )
+    }
+}
+
+module.exports = AddRatingApp;
+```
+
 ### iOS
 Créer un boutton dans le ``storyboard``.
 Lier ce boutton avec le ``ViewController``
