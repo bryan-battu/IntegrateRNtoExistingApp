@@ -262,6 +262,8 @@ To open developer menu press "d"
 ```
 Lancer ensuite votre application depuis Xcode. 
 Essayez d'entrer du texte dans le TextField puis cliquer sur le boutton.
-Le message ```shell
-This log is from swift: Ffff
+Le message 
+```shell
+This log is from swift: {Votre texte}
 ```
+devrait apparaitre dans le terminal Xcode.
