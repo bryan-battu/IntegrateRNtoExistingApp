@@ -267,3 +267,16 @@ Le message
 This log is from swift: {Votre texte}
 ```
 devrait apparaitre dans le terminal Xcode.
+Si c'est le cas, alors tout fonctionne.
+
+## Passer en mode production
+Jusqu'à maintant, nous avions besoin de lancer Metro avec `npm start` afin de faire fonctionner le module en React.
+Nous allons faire en sorte que ce ne soit plus le cas.
+
+Pour cela, il y'a plusieures étapes:
+* Dans le *Project Navigator*, cliquer sur le projet > Build Phases > cliquer sur + et sélectionner `New Run Script Phase`
+* Ajouter le script suivant:
+```objective-c
+export NODE_BINARY=node
+../node_modules/react-native/scripts/react-native-xcode.sh
+```
