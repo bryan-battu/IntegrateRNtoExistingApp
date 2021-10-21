@@ -125,3 +125,25 @@ Dans Xcode, ouvrir ``Info.plist``
 * Ajouter une clé nommée ``localhost`` de type Dictionnary en dessous de ``NSExceptionDomains``.
 * Ajouter ``NSTemporaryExceptionAllowsInsecureHTTPLoads`` avec la valeur ``YES`` en dessous de ``localhost``.
 
+## Créer un module natif pour vérifier la capacité de communiquer en RN et code natif
+
+### iOS
+Un module natif iOS a besoin de 2 fichiers:
+* Un fichier ``.swift``qui contient les fonctions:
+```swift 
+import Foundation
+import React
+
+@objc(TestConnectNativeModule)
+class TestConnectNativeModule: NSObject {
+    @objc
+    static func requiresMainQueueSetup() -> Bool {
+        return true
+    }
+    
+    @objc
+    func sendMessageToNative(_ rnMessage: String) {
+        print("This log is from swift: \(rnMessage)")
+    }
+}
+```
