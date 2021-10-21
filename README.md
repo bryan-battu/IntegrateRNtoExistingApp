@@ -276,7 +276,7 @@ Nous allons faire en sorte que ce ne soit plus le cas.
 Pour cela, il y'a plusieures étapes:
 * Dans le *Project Navigator*, cliquer sur le projet > Build Phases > cliquer sur + et sélectionner `New Run Script Phase`
 * Ajouter le script suivant:
-```swift
+```shell
 export NODE_BINARY=node
 ../node_modules/react-native/scripts/react-native-xcode.sh
 ```
