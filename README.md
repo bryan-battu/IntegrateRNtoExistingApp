@@ -288,3 +288,4 @@ Cette commande va créer un fichier ```main.jsbundle```
 * Coller ce fichier dans votre projet Xcode:
 
 ![image](https://user-images.githubusercontent.com/57012683/138277915-2363ec78-2fe7-4dfd-b1c6-6bff794d59ea.png)
+* Dans le menu d'Xcode, aller dans *Product* > *Scheme* > *Edit Scheme* et changer *Build Configuratio* de `Debug` à `Release`
