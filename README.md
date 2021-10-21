@@ -161,6 +161,14 @@ RCT_EXTERN_METHOD(sendMessageToNative: (NSString)rnMessage)
 ```
 
 ### RN
-Importer ```js
-NativeModules```
+Importer ``NativeModules``
 Au dessus de votre classe ```App Name```, ajouter le code suiant:
+```js
+const testConnectNative = NativeModules.TestConnectNative;
+
+const TestConnectNative = {
+    sendMessage: msg => {
+        testConnectNative.sendMessageToNative(msg);
+    }
+}
+```
