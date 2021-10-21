@@ -53,7 +53,7 @@ Après avoir créer le **Podfile**, installer les pod RN avec ``pod install``
 ### RN
 Créer un fichier ``RNView.js`` à la base du projet.
 Ajouter le code suivant 
-```react-native
+```native
 'use strict';
 
 import React from 'react';
