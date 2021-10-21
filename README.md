@@ -127,7 +127,7 @@ Dans Xcode, ouvrir ``Info.plist``
 
 ![Capture d’écran 2021-10-21 à 14 37 28](https://user-images.githubusercontent.com/57012683/138278649-951f746e-ada2-45d0-9508-a2df9699067f.png)
 
-## Créer un module natif pour vérifier la capacité de communiquer en RN et code natif
+## Créer un module natif pour vérifier la capacité de communiquer entre RN et code natif
 
 Nous allons créer un TextField ainsi qu'un boutton qui envoie au natif le text écrit dans le TextField.
 
@@ -216,11 +216,7 @@ class RNiOSViewManager: NSObject {
 
 extension RNiOSViewManager: RCTBridgeDelegate {
     func sourceURL(for bridge: RCTBridge!) -> URL! {
-        #if DEBUG
             return URL(string: "http://localhost:8081/index.bundle?platform=ios")
-        #else
-            return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
-        #endif
     }
 }
 ```
@@ -281,6 +277,14 @@ Pour cela, il y'a plusieures étapes:
 ```shell
 export NODE_BINARY=node
 ../node_modules/react-native/scripts/react-native-xcode.sh
+```
+* Dans `RNViewManager`, modifier la ligne:
+```swift 
+return URL(string: "http://localhost:8081/index.bundle?platform=ios")
+```
+par la ligne:
+```swift 
+return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
 ```
 * Aller au dossier RN dans le terminal et taper la commande:
 ```shell
