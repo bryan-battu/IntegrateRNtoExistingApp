@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func BtnGoReactView(_ sender: Any) {
-        let rootView = RNiOSViewManager.sharedInstance.viewForModule("AddRatingApp", initialProperties: nil)
+        let rootView = RNViewManager.sharedInstance.viewForModule("App", initialProperties: nil)
         let reactNativeVC = UIViewController()
         reactNativeVC.view = rootView
         reactNativeVC.modalPresentationStyle = .fullScreen
@@ -75,3 +75,4 @@ class ViewController: UIViewController {
     
 }
 ```
+Nous verrons ensuite à quoi correspond le ```swift App```
