@@ -17,8 +17,8 @@ Initialiser le projet RN via la commande:
 Supprimer tous les fichiers présents dans les sous-dossiers``/ios`` et ``/android``
 
 ### iOS
-Créer un projet iOS depuis Xcode. Coller l'ensemble des fichiers du projet dans le sous-dossier ``/ios``
-Dans ``/ios``, créer un fichier pod avec ``pod init`` et le modifier avec le **Podfile** suivant:
+Créer un projet iOS depuis Xcode. Coller l'ensemble des fichiers du projet dans le sous-dossier ``/ios``.
+Créer ensuite un fichier pod avec ``pod init`` dans le même sous-dossier et le modifier avec le **Podfile** suivant:
 ```ruby
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
