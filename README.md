@@ -75,4 +75,4 @@ class ViewController: UIViewController {
     
 }
 ```
-Nous verrons ensuite à quoi correspond le ```swift App```
+Nous verrons ensuite à quoi correspond le ``"App"``
