@@ -131,7 +131,7 @@ Nous allons créer un TextField ainsi qu'un boutton qui envoie au natif le text 
 
 ### iOS
 Un module natif iOS a besoin de 2 fichiers:
-* Un fichier ``.swift``qui contient les fonctions:
+* Un fichier ``.swift``que nous appellerons ``TestConnectNative.swift``:
 ```swift 
 import Foundation
 import React
@@ -149,7 +149,7 @@ class TestConnectNativeModule: NSObject {
     }
 }
 ```
-* un fichier ```.m``` pour exposer nos méthodes au RN:
+* un fichier ```.m``` pour exposer nos méthodes au RN que nous appellerons ``TestConnectNative.m``:
 ```objective-c
 #import <React/RCTBridgeModule.h>
 
@@ -183,4 +183,80 @@ Dans le ```render``` en dessous du texte, ajouter le code suivant:
    color="#841584"
    onPress={() => {TestConnectNative.sendMessage(this.state.messageToNative)}}
 />
+```
+## Sortir du RN pour revenir au natif
+## iOS
+Créer un fichier nommé ```RNViewManager.swift```.
+```swift 
+import Foundation
+import React
+
+class RNiOSViewManager: NSObject {
+    var bridge: RCTBridge?
+    
+    static let sharedInstance = RNiOSViewManager()
+    
+    func createBridgeIfNeeded() -> RCTBridge {
+        if bridge == nil {
+            bridge = RCTBridge.init(delegate: self, launchOptions: nil)
+        }
+        return bridge!
+    }
+    
+    func viewForModule(_ moduleName: String, initialProperties: [String: Any]?) -> RCTRootView {
+        let viewBridge = createBridgeIfNeeded()
+        let rootView: RCTRootView = RCTRootView(
+            bridge: viewBridge, moduleName: moduleName, initialProperties: initialProperties
+        )
+        return rootView
+    }
+}
+
+extension RNiOSViewManager: RCTBridgeDelegate {
+    func sourceURL(for bridge: RCTBridge!) -> URL! {
+        #if DEBUG
+            return URL(string: "http://localhost:8081/index.bundle?platform=ios")
+        #else
+            return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
+        #endif
+    }
+}
+```
+
+### Test
+Dans le Terminal, se placer dans le dossier RN et taper la commande ```npm start```
+Vous devriez voir quelque chose comme: 
+```shell 
+> RN@0.0.1 start /Users/bryanbattu/Desktop/RN
+> react-native start
+
+                                                      
+                        #######                       
+                   ################                   
+                #########     #########               
+            #########             ##########          
+        #########        ######        #########      
+       ##########################################     
+      #####      #####################       #####    
+      #####          ##############          #####    
+      #####    ###       ######       ###    #####    
+      #####    #######            #######    #####    
+      #####    ###########    ###########    #####    
+      #####    ##########################    #####    
+      #####    ##########################    #####    
+      #####      ######################     ######    
+       ######        #############        #######     
+         #########        ####       #########        
+              #########          #########            
+                  ######### #########                 
+                       #########                      
+                                                      
+                                                      
+                    Welcome to Metro!
+              Fast - Scalable - Integrated
+
+
+
+To reload the app press "r"
+To open developer menu press "d"
 ```
